@@ -20,7 +20,7 @@ An object-oriented approach towards using the Shopify API.
 
 ## Composer
 
-    $ composer require dan/shopify-api v0.9.9.*
+    $ composer require janicheg/shopify-api v0.9.9.*
     
 ## Usage without Laravel
 

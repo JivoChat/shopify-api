@@ -101,4 +101,23 @@ class Util
         return $content;
     }
 
+    /**
+     * Generate Oauth url to install application
+     *
+     * @param $apiKey
+     * @param $scope
+     * @param $shopDomain
+     * @param null $redirectUri
+     * @return string
+     */
+    public static function getAuthorizeUrl($apiKey, $scope, $shopDomain, $redirectUri = null)
+    {
+        $url = "http://{$shopDomain}/admin/oauth/authorize?client_id={$apiKey}&scope=" . urlencode($scope);
+        if ($redirectUri) {
+            $url .= "&redirect_uri=" . urlencode($redirectUri);
+        }
+
+        return $url;
+    }
+
 }

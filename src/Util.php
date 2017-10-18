@@ -110,11 +110,14 @@ class Util
      * @param null $redirectUri
      * @return string
      */
-    public static function getAuthorizeUrl($apiKey, $scope, $shopDomain, $redirectUri = null)
+    public static function getAuthorizeUrl($apiKey, $scope, $shopDomain, $redirectUri = null, $nonce = null)
     {
         $url = "http://{$shopDomain}/admin/oauth/authorize?client_id={$apiKey}&scope=" . urlencode($scope);
         if ($redirectUri) {
             $url .= "&redirect_uri=" . urlencode($redirectUri);
+        }
+        if ($nonce) {
+            $url .= "&nonce=" . urlencode($nonce);
         }
 
         return $url;

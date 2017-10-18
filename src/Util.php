@@ -108,6 +108,7 @@ class Util
      * @param $scope
      * @param $shopDomain
      * @param null $redirectUri
+     * @param null $nonce
      * @return string
      */
     public static function getAuthorizeUrl($apiKey, $scope, $shopDomain, $redirectUri = null, $nonce = null)

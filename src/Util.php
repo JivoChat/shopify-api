@@ -76,8 +76,8 @@ class Util
         $message = implode('&', $message);
 
         $calculated_hmac = hash_hmac(
-            $alorithm = 'sha256', 
-            $message, 
+            $alorithm = 'sha256',
+            $message,
             $secret
         );
 
@@ -108,17 +108,17 @@ class Util
      * @param $scope
      * @param $shopDomain
      * @param null $redirectUri
-     * @param null $nonce
+     * @param null $state
      * @return string
      */
-    public static function getAuthorizeUrl($apiKey, $scope, $shopDomain, $redirectUri = null, $nonce = null)
+    public static function getAuthorizeUrl($apiKey, $scope, $shopDomain, $redirectUri = null, $state = null)
     {
         $url = "http://{$shopDomain}/admin/oauth/authorize?client_id={$apiKey}&scope=" . urlencode($scope);
         if ($redirectUri) {
             $url .= "&redirect_uri=" . urlencode($redirectUri);
         }
-        if ($nonce) {
-            $url .= "&nonce=" . urlencode($nonce);
+        if ($state) {
+            $url .= "&state=" . urlencode($state);
         }
 
         return $url;

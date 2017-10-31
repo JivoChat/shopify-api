@@ -11,6 +11,7 @@ use ShopifyApi\Api\Discount;
 use ShopifyApi\Api\Metafield;
 use ShopifyApi\Api\Order;
 use ShopifyApi\Api\Product;
+use ShopifyApi\Api\ScriptTag;
 use ShopifyApi\Api\Shop;
 use ShopifyApi\Api\Variants;
 use ShopifyApi\Api\Webhook;
@@ -145,6 +146,10 @@ class Client
             case 'webhook':
             case 'webhooks':
                 $api = new Webhook($this);
+                break;
+            case 'script':
+            case 'scripts':
+                $api = new ScriptTag($this);
                 break;
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api called: "%s"', $name));

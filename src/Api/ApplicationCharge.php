@@ -21,6 +21,9 @@ class ApplicationCharge extends AbstractApi
     /** @var string $path */
     protected static $path = '/admin/application_charges/#id#.json';
 
+    /** @var string $path */
+    protected static $path_active = '/admin/application_charges/#id#/activate.json';
+
     /** @var array $fields */
     public static $fields = [
         'confirmation_url',
@@ -89,7 +92,7 @@ class ApplicationCharge extends AbstractApi
      */
     public function activate($id)
     {
-        return $this->post($this->getPath(rawurlencode($id)));
+        return $this->post($this->getPath($id, self::$path_active));
     }
 
 }

@@ -1,5 +1,5 @@
 {
-  "name": "janicheg/shopify-api",
+  "name": "jivochat/shopify-api",
   "description": "Shopify API for PHP",
   "keywords": ["shopify", "api", "webhooks", "laravel"],
   "license": "MIT",
